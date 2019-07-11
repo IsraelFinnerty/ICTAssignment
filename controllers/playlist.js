@@ -2,6 +2,7 @@
 
 const logger = require("../utils/logger");
 const playlistStore = require("../models/playlist-store");
+const assessmentsStore = require("../models/assesments-store");
 const uuid = require("uuid");
 
 const playlist = {

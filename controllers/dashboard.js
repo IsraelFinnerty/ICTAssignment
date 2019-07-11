@@ -3,6 +3,7 @@
 const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const playlistStore = require("../models/playlist-store");
+const assessmentsStore = require("../models/assesments-store");
 const uuid = require("uuid");
 
 const dashboard = {
@@ -10,10 +11,12 @@ const dashboard = {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
-      title: "Playlist Dashboard",
-      playlists: playlistStore.getUserPlaylists(loggedInUser.id)
+      user: loggedInUser.id,
+      title: "Assessment Dashboard",
+      name: accounts.getCurrentUser(request).firstName,
+      assessments: assessmentsStore.getUserAssessments(loggedInUser.id).reverse(),
     };
-    logger.info("about to render", playlistStore.getAllPlaylists());
+    logger.info("about to render");
     response.render("dashboard", viewData);
   },
 
@@ -24,7 +27,7 @@ const dashboard = {
     response.redirect("/dashboard");
   },
 
-  addPlaylist(request, response) {
+  addAssessment(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const newPlayList = {
       id: uuid(),

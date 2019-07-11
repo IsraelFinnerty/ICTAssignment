@@ -10,7 +10,21 @@ const playlistStore = {
   collection: "playlistCollection",
 
   getAllPlaylists() {
-    return this.store.findAll(this.collection);
+
+    const playlists = this.store.findAll(this.collection);
+
+    for (let i=0; i<playlists.length; i++) {
+    const playlist = this.getPlaylist(playlists[i].id);
+    const songs = playlist.songs;
+    let total = 0;
+    for (let i=0; i<songs.length; i++)
+      {
+        total += Number(songs[i].duration);
+      }
+    playlist.duration=total;
+      this.store.save();
+  }
+    return playlists;
   },
 
   getPlaylist(id) {

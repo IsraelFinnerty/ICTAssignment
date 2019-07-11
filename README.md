@@ -1,4 +1,4 @@
-Welcome to the Playlist 4
+Welcome to Jim's Wonderfull Gym
 =========================
 
-Version 4 of the Playlist application
+Simply the best Gym in the World! (T's & C's apply)
