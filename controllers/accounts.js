@@ -31,6 +31,13 @@ const accounts = {
     response.render("signup", viewData);
   },
 
+  settings(request, response) {
+    const viewData = {
+      title: "Update User Records"
+    };
+    response.render("settings", viewData);
+  },
+
   register(request, response) {
     const user = request.body;
     user.id = uuid();
@@ -41,8 +48,9 @@ const accounts = {
 
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
-    if (user) {
+    if (user && user.password === request.body.password) {
       response.cookie("playlist", user.email);
+
       logger.info(`logging in ${user.email}`);
       response.redirect("/dashboard");
     } else {
