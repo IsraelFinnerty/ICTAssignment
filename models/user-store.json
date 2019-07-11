@@ -19,7 +19,9 @@
       "lastName": "Finnerty",
       "email": "israelfinnerty@gmail.com",
       "password": "secret",
-      "id": "bb3d77ca-1aee-4248-a5de-393301eb3739"
+      "id": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "weight": "100",
+      "height": "1.5"
     }
   ]
 }
