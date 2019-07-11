@@ -25,6 +25,14 @@ const playlist = {
     response.redirect("/dashboard");
   },
 
+  getLatestAssessment(request) {
+
+    const last = assessmentsStore.getUserAssessments(request);
+   return assessmentsStore.getAssessment(last[last.length-1].id);
+
+
+  },
+
   addAssessment(request, response) {
     const assessmentId = request.params.id;
     const loggedInUser = accounts.getCurrentUser(request);
