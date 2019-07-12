@@ -4,15 +4,17 @@ const logger = require("../utils/logger");
 const assessmentsStore = require("../models/assesments-store");
 const playlistStore = require("../models/playlist-store");
 const accounts = require("./accounts.js");
+const gymutility = require("./gymutility.js");
 const uuid = require("uuid");
 
-const playlist = {
+const assessments = {
   index(request, response) {
     const playlistId = request.params.id;
     logger.debug("Playlist id = ", playlistId);
     const viewData = {
       title: "Playlist",
-      playlist: playlistStore.getPlaylist(playlistId)
+      playlist: playlistStore.getPlaylist(playlistId),
+
     };
     response.render("playlist", viewData);
   },
@@ -46,11 +48,19 @@ const playlist = {
       upperarm: request.body.upperarm,
       waist: request.body.waist,
       hips: request.body.hips,
-    }
+      trend: assessments.weightTrend(request),
+    };
     logger.debug("Assessment = ", newAssessment);
     assessmentsStore.addAssessment(newAssessment);
     response.redirect("/dashboard");
-  }
+  },
+
+  weightTrend(request) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    if (request.body.weight <= assessments.getLatestAssessment(loggedInUser.id).weight)
+      return true;
+
+  },
 };
 
-module.exports = playlist;
+module.exports = assessments;

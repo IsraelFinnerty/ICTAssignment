@@ -16,8 +16,9 @@ const dashboard = {
     const viewData = {
       user: loggedInUser.id,
       title: "Assessment Dashboard",
-      bmi: dashboard.calculateBMI(request),
-      bmiCategory: dashboard.determineBMICategory(dashboard.calculateBMI(request)),
+      bmi: gymutility.calculateBMI(request).toFixed(2),
+      bmiCategory: gymutility.determineBMICategory(gymutility.calculateBMI(request)),
+      idealWeight: gymutility.isIdealBodyWeight(request),
       name: accounts.getCurrentUser(request).firstName,
       assessments: assessmentsStore.getUserAssessments(loggedInUser.id).reverse(),
     };

@@ -1,16 +1,29 @@
-"use strict"
+"use strict";
 
 const logger = require("../utils/logger");
 const accounts = require("./accounts.js");
 
 
-const gymutility = {
+const gymutility2 = {
     calculateBMI(request){
         const loggedInUser = accounts.getCurrentUser(request);
         let weight;
-        if (request != null) weight = loggedInUser.weight;
+        if (request != null) weight = assessments.getLatestAssessment(loggedInUser.id).weight;
         else weight = loggedInUser.weight;
         return weight / (loggedInUser.height * loggedInUser.height);
+    },
+
+    determineBMICategory(bmiValue) {
+
+
+        if (bmiValue<16) return "SEVERELY UNDERWEIGHT";
+        if (bmiValue>=16 &&bmiValue<18.5) return "UNDERWEIGHT";
+        if (bmiValue>=18.5 && bmiValue<25) return "NORMAL";
+        if (bmiValue>=25 && bmiValue<30) return "OVERWEIGHT";
+        if (bmiValue>=30 && bmiValue<35) return "MODERATELY OBESE";
+        if (bmiValue>=35) return "SEVERELY OBESE";
+
+        else return "Error when calculating BMI Category";
     },
 };
 /*
