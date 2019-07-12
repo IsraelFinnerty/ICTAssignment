@@ -4,8 +4,9 @@ const logger = require("../utils/logger");
 const playlistStore = require("../models/playlist-store");
 const assessmentsStore = require("../models/assesments-store");
 const uuid = require("uuid");
+const accounts = require("./accounts.js");
 
-const playlist = {
+const gymutility = {
   index(request, response) {
     const playlistId = request.params.id;
     logger.debug("Playlist id = ", playlistId);
@@ -39,4 +40,4 @@ const playlist = {
   }
 };
 
-module.exports = playlist;
+module.exports = gymutility;
