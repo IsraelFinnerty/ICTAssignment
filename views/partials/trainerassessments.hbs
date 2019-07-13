@@ -12,7 +12,7 @@
         <th><img src="public/images/hips.png" height="40px"><br>Hips</th>
         <th><img src="public/images/trend.png" height="40px"><br>Trend</th>
         <th><img src="public/images/comment.png" height="40px"><br>Comment</th>
-        <th><img src="public/images/trash.png" height="40px"><br>Delete</th>
+        <th></th>
     </tr>
     </thead>
 
@@ -51,16 +51,16 @@
             {{/if}}
         </td>
         <td>
-            --Comment--
+            {{comment}}
         </td>
-        <td><a href="/dashboard/deleteassessment/{{id}}" ><i class="ui trash icon"></i></a>
+
         </td>
     </tr>
 
 </tbody>
     </table>
 
-    <form class="ui stacked segment form" action="/trainerdashboard/${_member.id}/addcomment/${assessment.id}" method="POST">
+    <form class="ui stacked segment form" action="/trainerdashboard/{{../user}}/addcomment/{{id}}" method="POST">
 
         <div class="field">
             <label>Add Comment</label>

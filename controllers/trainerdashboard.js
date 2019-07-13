@@ -15,7 +15,7 @@ const dashboard = {
         logger.info("dashboard rendering");
         const currentMember = userStore.getUserById(request.params.id);
         const viewData = {
-           // user: loggedInUser.id,
+            user: request.params.id,
             title: "Assessment Dashboard",
             bmi: gymutility.calculateBMI(currentMember).toFixed(2),
             bmiCategory: gymutility.determineBMICategory(gymutility.calculateBMI(currentMember)),
@@ -28,11 +28,20 @@ const dashboard = {
     },
 
 
-    deletePlaylist(request, response) {
-        const playlistId = request.params.id;
-        logger.debug(`Deleting Playlist ${playlistId}`);
-        playlistStore.removePlaylist(playlistId);
-        response.redirect("/dashboard");
+    deleteAssessment(request, response) {
+        const userId = request.params.user;
+        const assessmentId = request.params.id;
+        logger.debug(`Deleting Assessment`);
+        assessmentsStore.removeAssessment(assessmentId);
+        response.reload();
+    },
+
+    addComment(request, response) {
+      const userId = request.params.user;
+      const assessment = assessmentsStore.getAssessment(request.params.id);
+      assessment.comment = request.body.comment;
+      assessmentsStore.save();
+      response.redirect("/trainerdashboard/"+userId);
     },
 
     addAssessment(request, response) {

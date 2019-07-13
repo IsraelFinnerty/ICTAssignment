@@ -3,13 +3,14 @@
 const logger = require("../utils/logger");
 const accounts = require("./accounts.js");
 const assessments = require("./assessments");
+const assessmentsStore = require("../models/assesments-store");
 
 const gymutility = {
     calculateBMI(request){
     const loggedInUser = request;
     let weight;
-    if (request != null) weight = assessments.getLatestAssessment(loggedInUser.id).weight;
-    else weight = loggedInUser.startWeight;
+    if (assessmentsStore.getUserAssessments(loggedInUser.id).length >0) weight = assessments.getLatestAssessment(loggedInUser.id).weight;
+    else weight = Number(loggedInUser.startWeight);
     return weight / (loggedInUser.height * loggedInUser.height);
   },
 
@@ -30,7 +31,7 @@ const gymutility = {
 {
     const loggedInUser = request;
     let weight;
-    if (request != null) weight = assessments.getLatestAssessment(loggedInUser.id).weight;
+    if (assessments.getLatestAssessment(loggedInUser.id)) weight = assessments.getLatestAssessment(loggedInUser.id).weight;
     else weight = loggedInUser.weight;
 
     if (loggedInUser.gender === "M")
@@ -48,14 +49,14 @@ const gymutility = {
 
     else
     {
-        if (loggedinUser.height()<1.524)
+        if (loggedInUser.height<1.524)
         {
             if (weight>= 43.5 && weight<=45.5) return true;
             else return false;
         }
 
-        else if (weight-5 > 49 +(2.3*((loggedInUser.height-1.524)/0.0254))) return false;
-        else if (weight+5 < 49 +(2.3*((loggedInUser.height-1.524)/0.0254))) return false;
+        else if (weight-2 > 49 + (2.3*((loggedInUser.height-1.524)/0.0254))) return false;
+        else if (weight+2 < 49 +(2.3*((loggedInUser.height-1.524)/0.0254))) return false;
         else return true;
     }
 
