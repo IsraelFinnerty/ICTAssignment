@@ -1,28 +1,53 @@
 {
   "users": [
     {
-      "firstName": "homer",
-      "lastName": "simpson",
+      "firstname": "homer",
+      "lastname": "simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "startWeight": "100",
+      "height": "1.5",
+      "gender": "M"
     },
     {
-      "firstName": "marge",
-      "lastName": "simpson",
+      "firstname": "marge",
+      "lastname": "simpson",
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
     },
     {
-      "firstName": "Israel",
-      "lastName": "Finnerty",
+      "firstname": "Israel",
+      "lastname": "Finnerty",
       "email": "israelfinnerty@gmail.com",
       "password": "secret",
       "id": "bb3d77ca-1aee-4248-a5de-393301eb3739",
       "weight": "100",
       "height": "1.5",
       "gender": "M"
+    },
+    {
+      "firstname": "Dawn",
+      "lastname": "Manning",
+      "gender": "F",
+      "email": "dawnbreemanning@gmail.com",
+      "password": "1",
+      "address": "8 Glandore Road",
+      "height": "1.6",
+      "startWeight": "35",
+      "id": "1a1238ed-5c81-4ab7-bd79-94902fc1ca3b"
+    },
+    {
+      "firstname": "Jim",
+      "lastname": "Trainer",
+      "gender": "M",
+      "email": "jim@trainer.com",
+      "password": "secret",
+      "address": "Galapogos",
+      "height": "1.8",
+      "startWeight": "50",
+      "id": "b926c4fb-4cd4-48c7-9809-f9f835dd4c04"
     }
   ]
 }

@@ -12,7 +12,7 @@ const assessments = {
     const playlistId = request.params.id;
     logger.debug("Playlist id = ", playlistId);
     const viewData = {
-      title: "Playlist",
+      title: "Assessment",
       playlist: playlistStore.getPlaylist(playlistId),
 
     };
@@ -48,17 +48,20 @@ const assessments = {
       upperarm: request.body.upperarm,
       waist: request.body.waist,
       hips: request.body.hips,
-      trend: assessments.weightTrend(request),
+      trend: assessments.weightTrend(request)
     };
     logger.debug("Assessment = ", newAssessment);
     assessmentsStore.addAssessment(newAssessment);
     response.redirect("/dashboard");
   },
 
-  weightTrend(request) {
+ weightTrend(request) {
     const loggedInUser = accounts.getCurrentUser(request);
-    if (request.body.weight <= assessments.getLatestAssessment(loggedInUser.id).weight)
-      return true;
+    if (assessments.getLatestAssessment(loggedInUser.id)) {
+        if (request.body.weight <= assessments.getLatestAssessment(loggedInUser.id).weight)
+            return true;
+    }
+    else return true;
 
   },
 };
