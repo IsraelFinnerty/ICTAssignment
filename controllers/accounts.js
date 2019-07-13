@@ -50,10 +50,14 @@ const accounts = {
     const user = userstore.getUserByEmail(request.body.email);
     if (user && user.password === request.body.password) {
       response.cookie("playlist", user.email);
-
       logger.info(`logging in ${user.email}`);
-      response.redirect("/dashboard");
-    } else {
+        if (request.body.email==="jim@trainer.com" || request.body.email==="jimswife@trainer.com")
+          { response.redirect("/trainermenu"); }
+          else {
+          response.redirect("/dashboard");
+                }
+      }
+    else {
       response.redirect("/login");
     }
   },
