@@ -1,0 +1,35 @@
+{{> menu id="dashboard"}}
+
+
+
+<table class="ui fixed table">
+    <thead>
+
+    <tr>
+        <th>Name</th>
+        <th>Assessments</th>
+        <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {{#each memberlist}}
+    <tr>
+        <td>
+            <i class="ui small user icon"></i> <a href="/trainerdashboard/{{id}}">
+            {{firstname}} {{lastname}} </a>
+        </td>
+        <td>
+            -number of assessments-
+        </td>
+        <td><a href="/memberlist/${members.id}/deletemember" ><i class="ui trash icon"></i></a></td>
+
+    </tr>
+
+{{/each}}
+
+    </tbody>
+</table>
+
+
+

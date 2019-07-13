@@ -1,0 +1,60 @@
+<table class="ui fixed table">
+    <thead>
+    <tr>
+        <th><img src="public/images/datetime.png" height="40px"><br>Date & Time</th>
+        <th><img src="public/images/weight.png" height="40px"><br>Weight</th>
+        <th><img src="public/images/chest.png" height="40px"><br>Chest</th>
+        <th><img src="public/images/thigh.png" height="40px"><br>Thigh</th>
+        <th><img src="public/images/upperarm.png" height="40px"><br>Upper Arm</th>
+        <th><img src="public/images/waist.png" height="40px"><br>Waist</th>
+        <th><img src="public/images/hips.png" height="40px"><br>Hips</th>
+        <th><img src="public/images/trend.png" height="40px"><br>Trend</th>
+        <th><img src="public/images/comment.png" height="40px"><br>Comment</th>
+        <th><img src="public/images/trash.png" height="40px"><br>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+{{#each assessments}}
+    <tr>
+        <td>
+            {{date}}
+        </td>
+        <td>
+            {{weight}}kg
+        </td>
+        <td>
+            {{chest}}cm
+        </td>
+        <td>
+            {{thigh}}cm
+        </td>
+        <td>
+            {{upperarm}}cm
+        </td>
+        <td>
+            {{waist}}cm
+        </td>
+        <td>
+            {{hips}}cm
+        </td>
+        <td>
+            {{#if trend}}
+            <i class= "green thumbs up icon"></i>
+            {{else}}
+            <i class= "red thumbs down icon"></i>
+            {{/if}}
+        </td>
+        <td>
+            --Comment--
+        </td>
+        <td><a href="/dashboard/deleteassessment/{{id}}" ><i class="ui trash icon"></i></a>
+        </td>
+    </tr>
+
+{{/each}}
+    </tbody>
+</table>
+
+<br>

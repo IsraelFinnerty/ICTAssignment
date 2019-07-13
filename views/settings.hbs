@@ -1,0 +1,50 @@
+{{> menu id="settings"}}
+
+<div class="ui two column grid basic middle aligned segment">
+    <div class="column">
+        <form class="ui stacked segment form" action="/settings" method="POST">
+            <h3 class="ui header">Update Your Details</h3>
+            <div class="two fields">
+                <div class="field">
+                    <label>First Name</label>
+                    <input value="${member.firstname}" type="text" name="firstname" required>
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input value="${member.lastname}"  type="text" name="lastname" required>
+                </div>
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <input value="${member.gender}"  type="text" name="gender" required>
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input value="${member.email}"  type="text" name="email" required>
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input placeholder="Enter your current password | To change your password enter a new password" type="password" name="password" required>
+            </div>
+            <div class="field">
+                <label>Address</label>
+                <input value="${member.address}"  type="text" name="address" required>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Height</label>
+                    <input value="${member.height}"  type="number" name="height" required>
+                </div>
+                <div class="field">
+                    <label>Starting Weight</label>
+                    <input value="${member.startWeight}"  type="text" name="startWeight" required>
+                </div>
+            </div>
+            <button class="ui blue submit button">Update</button>
+            <a href="/dashboard" class="ui blue right floated button">Cancel</a>
+        </form>
+    </div>
+    <div class="column">
+        <img class="ui image" src="/public/images/logo.png">
+    </div>
+</div>

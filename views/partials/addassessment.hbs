@@ -1,0 +1,33 @@
+<form class="ui stacked segment form" action="/dashboard/addassessment" method="POST">
+
+    <div class="two fields">
+        <div class="field">
+            <label><img src="public/images/weight.png" width="30px"> Weight</label>
+            <input placeholder="00.00kg" type="number" name="weight" step="any">
+        </div>
+        <div class="field">
+            <label><img src="public/images/chest.png" width="30px"> Chest</label>
+            <input placeholder="00.00cm" type="number" name="chest" step="any">
+        </div>
+        <div class="field">
+            <label><img src="public/images/thigh.png" width="30px"> Thigh</label>
+            <input placeholder="00.00cm" type="number" name="thigh" step="any">
+        </div>
+    </div>
+    <div class="two fields">
+        <div class="field">
+            <label><img src="public/images/upperarm.png" width="30px"> Upper Arm</label>
+            <input placeholder="00.00cm" type="number" name="upperarm" step="any">
+        </div>
+        <div class="field">
+            <label><img src="public/images/waist.png" width="30px"> Waist</label>
+            <input placeholder="00.00cm" type="number" name="waist" step="any">
+        </div>
+        <div class="field">
+            <label><img src="public/images/hips.png" height="30px"> Hips</label>
+            <input placeholder="00.00cm" type="number" name="hips" step="any">
+        </div>
+    </div>
+    <button class="ui blue submit button">Add Assessment</button>
+    <a href="/dashboard" class="ui blue right floated button">Clear</a>
+</form>
