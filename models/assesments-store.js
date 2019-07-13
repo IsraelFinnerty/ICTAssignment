@@ -69,6 +69,10 @@ const assessmentStore = {
         const songs = playlist.songs;
         _.remove(songs, { id: songId });
         this.store.save();
+    },
+
+    save() {
+        this.store.save();
     }
 };
 

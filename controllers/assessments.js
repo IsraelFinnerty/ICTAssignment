@@ -28,11 +28,11 @@ const assessments = {
   },
 
   getLatestAssessment(request) {
-
-    const last = assessmentsStore.getUserAssessments(request);
-   return assessmentsStore.getAssessment(last[last.length-1].id);
-
-
+   if (assessmentsStore.getUserAssessments(request).length > 0) {
+     const last = assessmentsStore.getUserAssessments(request);
+     return assessmentsStore.getAssessment(last[last.length - 1].id);
+   }
+   else return null;
   },
 
   addAssessment(request, response) {
@@ -48,7 +48,8 @@ const assessments = {
       upperarm: request.body.upperarm,
       waist: request.body.waist,
       hips: request.body.hips,
-      trend: assessments.weightTrend(request)
+      trend: assessments.weightTrend(request),
+      comment: "",
     };
     logger.debug("Assessment = ", newAssessment);
     assessmentsStore.addAssessment(newAssessment);
