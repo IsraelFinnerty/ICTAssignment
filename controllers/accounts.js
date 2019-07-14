@@ -32,18 +32,35 @@ const accounts = {
   },
 
   settings(request, response) {
-    const viewData = {
-      title: "Update User Records"
-    };
+      const loggedInUser = accounts.getCurrentUser(request);
+      const viewData = {
+      title: "Update User Records",
+          user: loggedInUser
+      };
     response.render("settings", viewData);
   },
+
+    updateSettings(request, repsonse) {
+      const loggedInUser = accounts.getCurrentUser(request);
+       loggedInUser.firstname = request.body.firstname;
+        loggedInUser.lastname = request.body.lastname;
+        loggedInUser.gender = request.body.gender.charAt(0).toUpperCase();
+        loggedInUser.email = request.body.email;
+        loggedInUser.password = request.body.password;
+        loggedInUser.address = request.body.address;
+        loggedInUser.height = request.body.height;
+        loggedInUser.startWeight = request.body.startWeight;
+      userstore.save();
+      repsonse.redirect("/settings");
+    },
 
   register(request, response) {
     const user = request.body;
     user.id = uuid();
+    user.gender = request.body.gender.charAt(0).toUpperCase();
     userstore.addUser(user);
-    logger.info(`registering ${user.email}`);
-    response.redirect("/");
+    logger.info(`registering`);
+    response.redirect("/login");
   },
 
   authenticate(request, response) {
@@ -58,7 +75,10 @@ const accounts = {
                 }
       }
     else {
-      response.redirect("/login");
+        const viewData = {
+            failedLogin: true
+        };
+      response.render("login", viewData);
     }
   },
 

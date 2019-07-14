@@ -8,18 +8,7 @@ const gymutility = require("./gymutility.js");
 const uuid = require("uuid");
 
 const assessments = {
-  index(request, response) {
-    const playlistId = request.params.id;
-    logger.debug("Playlist id = ", playlistId);
-    const viewData = {
-      title: "Assessment",
-      playlist: playlistStore.getPlaylist(playlistId),
-
-    };
-    response.render("playlist", viewData);
-  },
-
-  deleteAssessment(request, response) {
+   deleteAssessment(request, response) {
     const userId = request.params.user;
     const assessmentId = request.params.id;
     logger.debug(`Deleting Assessment`);

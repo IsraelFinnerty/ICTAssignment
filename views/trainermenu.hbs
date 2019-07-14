@@ -7,7 +7,6 @@
 
     <tr>
         <th>Name</th>
-        <th>Assessments</th>
         <th>Delete</th>
 
     </tr>
@@ -19,10 +18,8 @@
             <i class="ui small user icon"></i> <a href="/trainerdashboard/{{id}}">
             {{firstname}} {{lastname}} </a>
         </td>
-        <td>
-            -number of assessments-
-        </td>
-        <td><a href="/memberlist/${members.id}/deletemember" ><i class="ui trash icon"></i></a></td>
+
+        <td><a href="/memberlist/{{id}}/deletemember" ><i class="ui trash icon"></i></a></td>
 
     </tr>
 

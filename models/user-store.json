@@ -1,23 +1,6 @@
 {
   "users": [
     {
-      "firstname": "homer",
-      "lastname": "simpson",
-      "email": "homer@simpson.com",
-      "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "startWeight": "100",
-      "height": "1.5",
-      "gender": "M"
-    },
-    {
-      "firstname": "marge",
-      "lastname": "simpson",
-      "email": "marge@simpson.com",
-      "password": "secret",
-      "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
-    },
-    {
       "firstname": "Israel",
       "lastname": "Finnerty",
       "email": "israelfinnerty@gmail.com",
@@ -26,7 +9,8 @@
       "weight": "100",
       "height": "1.5",
       "gender": "M",
-      "startWeight": "50"
+      "startWeight": "51",
+      "address": "Glandore"
     },
     {
       "firstname": "Dawn",
@@ -48,7 +32,41 @@
       "address": "Galapogos",
       "height": "1.8",
       "startWeight": "50",
-      "id": "b926c4fb-4cd4-48c7-9809-f9f835dd4c04"
+      "id": "b926c4fb-4cd4-48c7-9809-f9f835dd4c04",
+      "trainer": true
+    },
+    {
+      "firstname": "Homer",
+      "lastname": "Simpson",
+      "gender": "M",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "address": "Spingfield",
+      "height": "1.5",
+      "startWeight": "80",
+      "id": "88efee57-1e7a-4375-8d16-d844df0e504f"
+    },
+    {
+      "firstname": "Joe",
+      "lastname": "Bloggs",
+      "gender": "M",
+      "email": "joe@bloggs.com",
+      "password": "secret",
+      "address": "Ireland",
+      "height": "1.8",
+      "startWeight": "56",
+      "id": "4d56dfe6-279c-4b93-a5f6-4afb2b140e80"
+    },
+    {
+      "firstname": "Jane",
+      "lastname": "Bloggs",
+      "gender": "F",
+      "email": "jane@bloggs.com",
+      "password": "secret",
+      "address": "Cork",
+      "height": "1.2",
+      "startWeight": "40",
+      "id": "e8976b89-9a08-4cec-8237-731f6cf9ccd7"
     }
   ]
 }
