@@ -1,0 +1,60 @@
+<table class="ui fixed table">
+    <h3>Goals</h3>
+    <thead>
+
+    <tr>
+
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fdatetime.png?v=1562875523494" height="40px"><br>Date Set</th>
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fweight.png?v=1562875522947" height="40px"><br>Target Area</th>
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fchest.png?v=1562875522629" height="40px"><br>Measurement</th>
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fthigh.png?v=1562875524175" height="40px"><br>Target Date</th>
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fupperarm.png?v=1562875522835" height="40px"><br>Goal Status</th>
+        <th><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fwaist.png?v=1562875522926" height="40px"><br>Update Status</th>
+       <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+{{#each goals}}
+    <tr>
+        <td>
+            {{date}}
+        </td>
+        <td>
+            {{target}}
+        </td>
+        <td>
+            {{measurement}}
+        </td>
+        <td>
+            {{futureDate}}
+        </td>
+        <td>
+            {{status}}
+        </td>
+        <td>
+
+            <form class="ui form"  action="/trainerdashboard/{{../user}}/trainergoalstatus/{{id}}" method="POST">
+
+                <select class="ui fluid dropdown" name="status">
+                    <option value="Open">Open</option>
+                    <option value="Missed">Missed</option>
+                    <option value="Achieved">Achieved</option>
+                </select>
+            </td>
+
+        <td>
+
+                <button class="ui blue submit button">  <i class="sync alternate icon"></i>Update</button>
+            </form>
+
+        </td>
+
+    </tr>
+
+{{/each}}
+    </tbody>
+</table>
+
+<br>

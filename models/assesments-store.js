@@ -9,24 +9,6 @@ const assessmentStore = {
     }),
     collection: "assessmentCollection",
 
-    getAllPlaylists() {
-
-        const playlists = this.store.findAll(this.collection);
-
-        for (let i=0; i<playlists.length; i++) {
-            const playlist = this.getPlaylist(playlists[i].id);
-            const songs = playlist.songs;
-            let total = 0;
-            for (let i=0; i<songs.length; i++)
-            {
-                total += Number(songs[i].duration);
-            }
-            playlist.duration=total;
-            this.store.save();
-        }
-        return playlists;
-    },
-
     getAssessment(id) {
         return this.store.findOneBy(this.collection, { id: id });
     },
@@ -46,32 +28,12 @@ const assessmentStore = {
         this.store.save();
     },
 
-    removeAllPlaylists() {
+    removeAllAssessments() {
         this.store.removeAll(this.collection);
         this.store.save();
     },
 
-    addSong(id, song) {
-        const playlist = this.getPlaylist(id);
-        playlist.songs.push(song);
-
-        let duration = 0;
-        for (let i = 0; i < playlist.songs.length; i++) {
-            duration += playlist.songs[i].duration;
-        }
-
-        playlist.duration = duration;
-        this.store.save();
-    },
-
-    removeAssessment2(user, id) {
-        const assessment = this.getAssessment(id);
-        const songs = playlist.songs;
-        _.remove(songs, { id: songId });
-        this.store.save();
-    },
-
-    save() {
+       save() {
         this.store.save();
     }
 };

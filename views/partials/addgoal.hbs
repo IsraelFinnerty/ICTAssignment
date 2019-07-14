@@ -1,0 +1,20 @@
+<form class="ui stacked segment form" action="/dashboard/addgoal" method="POST">
+<h3>New Goal</h3>
+    <div class="two fields">
+        <div class="field">
+            <label><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Ftarget.png?v=1563105328456" height="30px"> Target Area </label>
+            <input placeholder="Target Area" type="text" name="target" required>
+        </div>
+        <div class="field">
+            <label><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fwaist.png?v=1562875522926" width="30px"> Measurement </label>
+            <input placeholder="00.00" type="number" name="measurement" step="any" required>
+        </div>
+        <div class="field">
+            <label><img src="https://cdn.glitch.com/78d3d20b-b02b-49ad-a6e8-e09996aded47%2Fdatetime.png?v=1562875523494" height="30px"> Target Date</label>
+            <input  type="date" name="futureDate" required>
+        </div>
+    </div>
+
+    <button class="ui blue submit button">Add Goal</button>
+    <a href="/dashboard" class="ui blue right floated button">Clear Form</a>
+</form>

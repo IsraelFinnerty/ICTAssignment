@@ -1,7 +1,7 @@
 "use strict";
 
 const logger = require("../utils/logger");
-const userstore = require("../models/user-store");
+const userStore = require("../models/user-store");
 
 const trainers = {
     index(request, response) {
@@ -14,7 +14,13 @@ const trainers = {
     },
 
     listMembers(request){
-      return userstore.getAllUsers();
+      return userStore.getAllUsers();
+    },
+
+    deleteMember(request, response) {
+      const userId = request.params.id;
+      userStore.deleteUser(userId);
+      response.redirect("/trainermenu");
     }
 };
 

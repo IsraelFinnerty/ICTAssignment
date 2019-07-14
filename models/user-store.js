@@ -20,6 +20,16 @@ const userStore = {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
+  deleteUser(id) {
+    const user = this.getUserById(id);
+    this.store.remove(this.collection, user);
+    this.store.save();
+  },
+
+  save() {
+    this.store.save();
+  },
+
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   }

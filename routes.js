@@ -8,6 +8,7 @@ const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
 const playlist = require("./controllers/playlist.js");
 const assessments = require("./controllers/assessments.js");
+const goals = require("./controllers/goals.js");
 const trainers = require("./controllers/trainers.js");
 const trainerdashboard = require("./controllers/trainerdashboard.js");
 
@@ -16,6 +17,7 @@ router.get("/login", accounts.login);
 router.get("/signup", accounts.signup);
 router.get("/logout", accounts.logout);
 router.get("/settings", accounts.settings);
+router.post("/settings", accounts.updateSettings);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
@@ -23,10 +25,15 @@ router.get("/dashboard", dashboard.index);
 router.get("/dashboard/deleteplaylist/:id", dashboard.deletePlaylist);
 router.post("/dashboard/addassessment", assessments.addAssessment);
 router.get("/dashboard/deleteassessment/:id", assessments.deleteAssessment);
+router.post("/dashboard/addgoal", goals.addGoal);
+router.post("/dashboard/updategoalstatus/:id", goals.updateGoalStatus);
+router.post("/trainerdashboard/:user/trainergoalstatus/:id", goals.trainerStatus);
 
 router.get("/trainermenu", trainers.index);
 router.get("/trainerdashboard/:id", trainerdashboard.index);
 router.post("/trainerdashboard/:user/addcomment/:id", trainerdashboard.addComment);
+router.get("/memberlist/:id/deletemember", trainers.deleteMember);
+router.get("/memberlist", trainers.index);
 
 router.get("/about", about.index);
 router.get("/playlist/:id", playlist.index);

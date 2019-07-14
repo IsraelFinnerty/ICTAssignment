@@ -1,0 +1,22 @@
+{
+  "goalCollection": [
+    {
+      "id": "a78d1f29-b786-45f3-83b6-d2bbd7f30e07",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/14/2019, 12:29:05 PM",
+      "target": "Weight",
+      "measurement": "45",
+      "futureDate": "2019-07-25",
+      "status": "Achieved"
+    },
+    {
+      "id": "d3ece551-36be-41b6-ab50-df65fc1ab1b5",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/14/2019, 12:57:19 PM",
+      "target": "Chest",
+      "measurement": "1.2",
+      "futureDate": "2019-07-17",
+      "status": "Achieved"
+    }
+  ]
+}
