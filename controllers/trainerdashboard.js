@@ -8,10 +8,11 @@ const playlistStore = require("../models/playlist-store");
 const assessmentsStore = require("../models/assesments-store");
 const userStore = require("../models/user-store");
 const goalStore = require("../models/goal-store");
+const goals = require("./goals.js");
 const uuid = require("uuid");
 
 
-const dashboard = {
+const trainerdashboard = {
     index(request, response) {
         logger.info("dashboard rendering");
         const currentMember = userStore.getUserById(request.params.id);
@@ -23,7 +24,11 @@ const dashboard = {
             idealWeight: gymutility.isIdealBodyWeight(currentMember),
             name: currentMember.firstname,
             assessments: assessmentsStore.getUserAssessments(currentMember.id).reverse(),
-            goals: goalStore.getUserGoals(currentMember.id).reverse()
+            goals: goalStore.getUserGoals(currentMember.id).reverse(),
+            totalGoals: goals.totalGoals(currentMember.id),
+            openGoals: goals.openGoals(currentMember.id),
+            achievedGoals: goals.achievedGoals(currentMember.id),
+            missedGoals: goals.missedGoals(currentMember.id)
         };
         logger.info("about to render");
         response.render("trainerdashboard", viewData);
@@ -57,7 +62,23 @@ const dashboard = {
         logger.debug("Creating a new Playlist", newPlayList);
         playlistStore.addPlaylist(newPlayList);
         response.redirect("/dashboard");
-    }
+    },
+
+    addGoal(request, response) {
+        const currentUserId = request.params.id;
+        const newGoal = {
+            id: uuid(),
+            userid: currentUserId,
+            date: new Date().toLocaleString(),
+            target: request.body.target,
+            measurement: request.body.measurement,
+            futureDate: request.body.futureDate,
+            status: "Open",
+        };
+        logger.debug("Goal = ", newGoal);
+        goalStore.addGoal(newGoal);
+        response.redirect("/trainerdashboard/"+currentUserId);
+    },
 };
 
-module.exports = dashboard;
+module.exports = trainerdashboard;

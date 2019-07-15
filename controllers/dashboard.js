@@ -7,6 +7,7 @@ const assessments = require("./assessments");
 const playlistStore = require("../models/playlist-store");
 const assessmentsStore = require("../models/assesments-store");
 const goalStore = require("../models/goal-store");
+const goals = require("./goals.js");
 const uuid = require("uuid");
 
 
@@ -22,8 +23,12 @@ const dashboard = {
       idealWeight: gymutility.isIdealBodyWeight(loggedInUser),
       name: loggedInUser.firstname,
       assessments: assessmentsStore.getUserAssessments(loggedInUser.id).reverse(),
-      goals: goalStore.getUserGoals(loggedInUser.id).reverse()
-  };
+      goals: goalStore.getUserGoals(loggedInUser.id).reverse(),
+      totalGoals: goals.totalGoals(loggedInUser.id),
+      openGoals: goals.openGoals(loggedInUser.id),
+      achievedGoals: goals.achievedGoals(loggedInUser.id),
+      missedGoals: goals.missedGoals(loggedInUser.id)
+    };
     logger.info("about to render");
     response.render("dashboard", viewData);
   },

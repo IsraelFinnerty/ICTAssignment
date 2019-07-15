@@ -57,15 +57,41 @@ const goals = {
         response.redirect("/trainerdashboard/"+currentMemberId);
     },
 
-    weightTrend(request) {
-        const loggedInUser = accounts.getCurrentUser(request);
-        if (assessments.getLatestAssessment(loggedInUser.id)) {
-            if (request.body.weight <= assessments.getLatestAssessment(loggedInUser.id).weight)
-                return true;
-        }
-        else return true;
+    totalGoals(userid) {
+      return  goalStore.getUserGoals(userid).length;
+      },
 
+    openGoals(userid) {
+        const goals = goalStore.getUserGoals(userid);
+        let count = 0;
+        for (let i =0; i<goals.length; i++)
+        {
+         if (goals[i].status === "Open") count++;
+        }
+        return count;
     },
+
+    achievedGoals(userid) {
+        const goals = goalStore.getUserGoals(userid);
+        let count = 0;
+        for (let i =0; i<goals.length; i++)
+        {
+            if (goals[i].status === "Achieved") count++;
+        }
+        return count;
+    },
+
+    missedGoals(userid) {
+        const goals = goalStore.getUserGoals(userid);
+        let count = 0;
+        for (let i =0; i<goals.length; i++)
+        {
+            if (goals[i].status === "Missed") count++;
+        }
+        return count;
+    }
+
+
 };
 
 module.exports = goals;

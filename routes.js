@@ -27,11 +27,13 @@ router.post("/dashboard/addassessment", assessments.addAssessment);
 router.get("/dashboard/deleteassessment/:id", assessments.deleteAssessment);
 router.post("/dashboard/addgoal", goals.addGoal);
 router.post("/dashboard/updategoalstatus/:id", goals.updateGoalStatus);
-router.post("/trainerdashboard/:user/trainergoalstatus/:id", goals.trainerStatus);
+
 
 router.get("/trainermenu", trainers.index);
 router.get("/trainerdashboard/:id", trainerdashboard.index);
 router.post("/trainerdashboard/:user/addcomment/:id", trainerdashboard.addComment);
+router.post("/trainerdashboard/:user/trainergoalstatus/:id", goals.trainerStatus);
+router.post("/trainerdashboard/addgoal/:id", trainerdashboard.addGoal);
 router.get("/memberlist/:id/deletemember", trainers.deleteMember);
 router.get("/memberlist", trainers.index);
 

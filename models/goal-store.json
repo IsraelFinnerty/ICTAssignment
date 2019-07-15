@@ -7,7 +7,7 @@
       "target": "Weight",
       "measurement": "45",
       "futureDate": "2019-07-25",
-      "status": "Achieved"
+      "status": "Open"
     },
     {
       "id": "d3ece551-36be-41b6-ab50-df65fc1ab1b5",
@@ -17,6 +17,66 @@
       "measurement": "1.2",
       "futureDate": "2019-07-17",
       "status": "Achieved"
+    },
+    {
+      "id": "bbd5f383-371b-4d4f-8f2b-33b3511b3f20",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/14/2019, 10:20:59 PM",
+      "target": "Weight",
+      "measurement": "45",
+      "futureDate": "2019-07-27",
+      "status": "Missed"
+    },
+    {
+      "id": "57130880-5ab2-4abf-9b16-eea1ee675492",
+      "date": "7/15/2019, 11:04:08 AM",
+      "target": "Weight",
+      "measurement": "40",
+      "futureDate": "2019-08-16",
+      "status": "Open"
+    },
+    {
+      "id": "21b6a57b-2481-438e-bd4b-ba79f577e44b",
+      "date": "7/15/2019, 11:04:52 AM",
+      "target": "Weight",
+      "measurement": "40",
+      "futureDate": "2019-08-16",
+      "status": "Open"
+    },
+    {
+      "id": "e4335b12-de42-476d-a7e6-740755a8e530",
+      "date": "7/15/2019, 11:07:18 AM",
+      "target": "Weight",
+      "measurement": "40",
+      "futureDate": "2019-08-16",
+      "status": "Open"
+    },
+    {
+      "id": "a33644e5-0707-403c-af3e-999766a99aba",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/15/2019, 11:07:29 AM",
+      "target": "Weight",
+      "measurement": "40",
+      "futureDate": "2019-08-16",
+      "status": "Open"
+    },
+    {
+      "id": "332800c5-bda7-4034-bc28-f62fac04affa",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/15/2019, 11:30:26 AM",
+      "target": "Thigh",
+      "measurement": "25",
+      "futureDate": "2019-07-18",
+      "status": "Open"
+    },
+    {
+      "id": "d9a38547-6a1a-48e0-a82a-9039d0668175",
+      "userid": "1a1238ed-5c81-4ab7-bd79-94902fc1ca3b",
+      "date": "7/15/2019, 11:55:25 AM",
+      "target": "Weight",
+      "measurement": "35",
+      "futureDate": "2019-07-25",
+      "status": "Open"
     }
   ]
 }
