@@ -6,7 +6,6 @@ const router = express.Router();
 const accounts = require("./controllers/accounts.js");
 const dashboard = require("./controllers/dashboard.js");
 const about = require("./controllers/about.js");
-const playlist = require("./controllers/playlist.js");
 const assessments = require("./controllers/assessments.js");
 const goals = require("./controllers/goals.js");
 const trainers = require("./controllers/trainers.js");
@@ -38,8 +37,5 @@ router.get("/memberlist/:id/deletemember", trainers.deleteMember);
 router.get("/memberlist", trainers.index);
 
 router.get("/about", about.index);
-router.get("/playlist/:id", playlist.index);
-router.get("/playlist/:id/deletesong/:songid", playlist.deleteSong);
-router.post("/playlist/:id/addsong", playlist.addSong);
 
 module.exports = router;

@@ -7,7 +7,7 @@
       "target": "Weight",
       "measurement": "45",
       "futureDate": "2019-07-25",
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "d3ece551-36be-41b6-ab50-df65fc1ab1b5",
@@ -76,6 +76,15 @@
       "target": "Weight",
       "measurement": "35",
       "futureDate": "2019-07-25",
+      "status": "Open"
+    },
+    {
+      "id": "95d796a0-7579-4174-980f-e1c600115340",
+      "userid": "bb3d77ca-1aee-4248-a5de-393301eb3739",
+      "date": "7/15/2019, 2:42:28 PM",
+      "target": "Upper Arm",
+      "measurement": "25",
+      "futureDate": "2019-11-15",
       "status": "Open"
     }
   ]

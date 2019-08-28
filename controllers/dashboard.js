@@ -4,7 +4,6 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const gymutility = require("./gymutility.js");
 const assessments = require("./assessments");
-const playlistStore = require("../models/playlist-store");
 const assessmentsStore = require("../models/assesments-store");
 const goalStore = require("../models/goal-store");
 const goals = require("./goals.js");
