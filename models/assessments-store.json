@@ -150,6 +150,58 @@
       "hips": "",
       "trend": true,
       "comment": ""
+    },
+    {
+      "id": "422bbc94-faf4-4da3-8a07-2d65b13ada8e",
+      "userid": "88efee57-1e7a-4375-8d16-d844df0e504f",
+      "date": "8/8/2019, 1:01:13 PM",
+      "weight": "70",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "trend": true,
+      "comment": ""
+    },
+    {
+      "id": "1bf44773-8c61-4f77-87a3-732b987dd3c2",
+      "userid": "88efee57-1e7a-4375-8d16-d844df0e504f",
+      "date": "8/8/2019, 1:01:20 PM",
+      "weight": "65",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "trend": true,
+      "comment": ""
+    },
+    {
+      "id": "fa3f0a37-5f09-4738-9c0e-62dda1e8674f",
+      "userid": "88efee57-1e7a-4375-8d16-d844df0e504f",
+      "date": "8/8/2019, 1:01:24 PM",
+      "weight": "60",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "trend": true,
+      "comment": ""
+    },
+    {
+      "id": "62a397c8-95d9-4596-9cd6-801a5688c0a1",
+      "userid": "88efee57-1e7a-4375-8d16-d844df0e504f",
+      "date": "8/8/2019, 1:01:28 PM",
+      "weight": "55",
+      "chest": "",
+      "thigh": "",
+      "upperarm": "",
+      "waist": "",
+      "hips": "",
+      "trend": true,
+      "comment": ""
     }
   ]
 }

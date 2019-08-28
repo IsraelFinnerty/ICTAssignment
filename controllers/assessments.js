@@ -2,7 +2,6 @@
 
 const logger = require("../utils/logger");
 const assessmentsStore = require("../models/assesments-store");
-const playlistStore = require("../models/playlist-store");
 const accounts = require("./accounts.js");
 const gymutility = require("./gymutility.js");
 const uuid = require("uuid");
